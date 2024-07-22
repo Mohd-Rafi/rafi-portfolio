@@ -6,7 +6,7 @@ export default {
         'gradient-custom':
           'linear-gradient(267deg, #da7c25 0.36%, #b923e1 102.06%)',
         'gradient-drawer':
-          'linear-gradient(90deg, rgba(41, 24, 16, 1) 41%, rgba(56, 6, 6, 1) 100%)',
+          'linear-gradient(90deg, rgba(56, 6, 6, 1) 0%, rgba(0, 0, 0, 1) 29%)',
       },
     },
   },
