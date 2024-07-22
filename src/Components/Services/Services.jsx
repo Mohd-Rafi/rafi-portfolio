@@ -5,7 +5,7 @@ const Services = () => {
   return (
     <div
       id="service"
-      className="services flex flex-col items-center justify-center gap-[80px] my-[80px] mx-[170px] max-md:items-start max-md:gap-16 max-md:my-[20px] max-md:mx-10 select-none"
+      className="services flex flex-col items-center justify-center gap-[80px] my-[80px] mx-[170px] max-md:items-start max-md:gap-16 max-md:my-[20px] max-md:mx-8 select-none"
     >
       <div className="services-title relative">
         <h1 className="text-6xl px-7 max-md:p-0 max-md:text-3xl">

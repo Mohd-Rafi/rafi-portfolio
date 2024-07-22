@@ -1,14 +1,15 @@
 import React from 'react';
+
 import './About.css';
 const About = () => {
   return (
     <div
       id="about"
-      className="select-none about flex flex-col items-center justify-center gap-[80px] my-[80px] mx-[170px]  max-md:my-18 max-md:mx-10 max-md:items-start"
+      className="select-none about flex flex-col items-center justify-center gap-[80px] my-[80px] mx-[170px]  max-md:my-18 max-md:mx-8 max-md:items-start"
     >
       <div className="about-title relative">
         <h2 className="px-[30px] text-5xl font-bold max-md:text-3xl max-md:px-0">
-          About me
+          About Me
         </h2>
         <img
           src="/assets/theme_pattern.svg"
@@ -25,12 +26,12 @@ const About = () => {
           />
         </div>
         <div className="about-right flex flex-col gap-[80px]">
-          <div className="about-para flex flex-col gap-3 text-xl max-md:text-justify">
+          <div className="about-para flex flex-col gap-3 text-xl max-md:text-center">
             <p>
               I am Web Developer Fresher who completed 5 months course in MERN
               Stack Development
             </p>
-            <p>
+            <p className="mt-3">
               My passion for web development is not only reflected in my
               extensive expreience but also in the enthusiasm and dedication
             </p>

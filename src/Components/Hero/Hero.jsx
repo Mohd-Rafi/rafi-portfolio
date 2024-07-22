@@ -1,6 +1,8 @@
 import React from 'react';
 import './Hero.css';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
+import { Fade, Slide } from 'react-awesome-reveal';
+
 const Hero = () => {
   return (
     <div
@@ -16,7 +18,9 @@ const Hero = () => {
         <span className="bg-gradient-custom bg-clip-text text-transparent mr-2">
           I'm Muhammed Rafi,
         </span>
-        MERN Stack Developer
+        <span className="bg-gradient-text bg-clip-text text-transparent">
+          MERN Stack Developer
+        </span>
       </h1>
       <p className="w-[50%] text-center text-2xl leading-[40px] max-md:w-[80%]">
         Full Stack Developer Who Turns Code into Impactful User Experiences
