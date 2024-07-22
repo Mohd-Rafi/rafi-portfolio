@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import { Fade as Hamburger } from 'hamburger-react';
+import { Cross as Hamburger } from 'hamburger-react';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -8,7 +8,11 @@ const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
   return (
     <div className="navbar flex items-center justify-between mx-[170px] my-[20px] max-lg:mx-[50px] max-sm:mx-2">
-      <img src="/assets/new-logo.png" alt="" className="w-32 h-12" />
+      <img
+        src="/assets/new-logo.png"
+        alt=""
+        className="w-32 h-12 max-md:w-24 max-md:h-9"
+      />
 
       <ul className="nav-menu flex items-center gap-[60px] list-none max-md:hidden">
         <li className="flex flex-col gap-1">
@@ -89,60 +93,60 @@ const Navbar = () => {
       </div>
 
       <div className="md:hidden fixed right-2 top-2 z-20 bg-[#3d222258] rounded">
-        <Hamburger toggled={isOpen} toggle={setOpen} />
+        <Hamburger toggled={isOpen} toggle={() => setOpen(!isOpen)} />
       </div>
 
       <ul
-        className={`nav-menu-mobile fixed top-0 right-0 w-64 h-full bg-gradient-drawer transform transition-transform duration-200 ${
+        className={`nav-menu-mobile fixed top-0 right-0 w-64 h-full bg-gradient-drawer rounded-tl-3xl rounded-bl-3xl transform transition-transform duration-200 ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         } flex flex-col items-start p-5 gap-5 space-y-4 z-10 md:hidden`}
       >
-        <li className="flex flex-col gap-1 mt-14">
+        <li className="flex flex-col gap-1 hover:scale-105 ease-in duration-100 uppercase mt-14 relative left-5">
           <AnchorLink
             className="anchor-link"
             offset={50}
             href="#home"
-            onClick={() => setOpen(false)}
+            onClick={() => setOpen(!isOpen)}
           >
             <p>Home</p>
           </AnchorLink>
         </li>
-        <li className="flex flex-col gap-1">
+        <li className="flex flex-col gap-1 hover:scale-105 ease-in duration-100 uppercase relative left-5">
           <AnchorLink
             className="anchor-link"
             offset={50}
             href="#about"
-            onClick={() => setOpen(false)}
+            onClick={() => setOpen(!isOpen)}
           >
             <p>About Me</p>
           </AnchorLink>
         </li>
-        <li className="flex flex-col gap-1">
+        <li className="flex flex-col gap-1 hover:scale-105 ease-in duration-100 uppercase relative left-5">
           <AnchorLink
             className="anchor-link"
             offset={50}
             href="#service"
-            onClick={() => setOpen(false)}
+            onClick={() => setOpen(!isOpen)}
           >
             <p>Services</p>
           </AnchorLink>
         </li>
-        <li className="flex flex-col gap-1">
+        <li className="flex flex-col gap-1 hover:scale-105 ease-in duration-100 uppercase relative left-5">
           <AnchorLink
             className="anchor-link"
             offset={50}
             href="#work"
-            onClick={() => setOpen(false)}
+            onClick={() => setOpen(!isOpen)}
           >
             <p>Portfolio</p>
           </AnchorLink>
         </li>
-        <li className="flex flex-col gap-1">
+        <li className="flex flex-col gap-1 hover:scale-105 ease-in duration-100 uppercase relative left-5">
           <AnchorLink
             className="anchor-link"
             offset={50}
             href="#contact"
-            onClick={() => setOpen(false)}
+            onClick={() => setOpen(!isOpen)}
           >
             <p>Contact</p>
           </AnchorLink>

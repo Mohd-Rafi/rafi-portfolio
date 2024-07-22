@@ -1,16 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './Contact.css';
 const Contact = () => {
+  // const [items, SetItems] = useState({ name: '', email: '', message: '' });
+
+  // const onChange = (e, key) => {
+  //   SetItems({ ...items, [key]: e.target.value });
+  // };
+
   const onSubmit = async event => {
     event.preventDefault();
     const formData = new FormData(event.target);
+    var name = formData.get('name');
+    var email = formData.get('email');
+    var message = formData.get('message');
 
+    if (!name || !email || !message) {
+      alert('Please fill in all the fields.');
+      return;
+    }
+    if (!email.includes('@gmail.com')) {
+      alert('Please enter correct email id');
+      return;
+    }
+    console.log(formData);
     formData.append('access_key', '82b5016c-6c1d-487e-ab09-3ab2eb3c16df');
-
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
-
     const res = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: {
@@ -22,6 +38,10 @@ const Contact = () => {
 
     if (res.success) {
       alert(res.message);
+      // Clear the input fields for email and message
+      event.target.querySelector('input[name="name"]').value = '';
+      event.target.querySelector('input[name="email"]').value = '';
+      event.target.querySelector('textarea[name="message"]').value = '';
     }
   };
 

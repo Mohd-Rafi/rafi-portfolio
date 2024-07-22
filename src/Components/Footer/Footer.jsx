@@ -5,9 +5,10 @@ const Footer = () => {
     <div className="footer my-[50px] mx-[170px] flex flex-col gap-7 max-md:mx-10">
       <div className="footer-top flex justify-between max-xl:flex-col max-xl:gap-10">
         <div className="footer-top-left">
-          <img src="/assets/new-logo.png" alt="" className="h-12" />
+          <img src="/assets/new-logo.png" alt="" className="h-12 max-md:h-8" />
           <p className="text-lg max-md:text-sm max-lg:mt-5">
-            Completed 5 months of training in MERN Stack
+            Full Stack Developer | Creating Seamless Web Experiences |
+            Proficient in JavaScript, React, Node.js, and MongoDB
           </p>
         </div>
         <div className="footer-top-right flex items-center gap-9 max-lg:flex-col">
@@ -25,8 +26,8 @@ const Footer = () => {
         </div>
       </div>
       <hr />
-      <div className="footer-bottom flex w-full justify-between text-base max-md:w-full max-lg:flex-col max-md:gap-3">
-        <p className="footer-bottom-left max-md:text-justify max-lg:mx-auto">
+      <div className="footer-bottom flex w-full justify-between text-base max-md:w-full max-lg:flex-col max-md:gap-3 select-none">
+        <p className="footer-bottom-left max-lg:mx-auto">
           2023 Muhammed Rafi. All rights reserved
         </p>
         <div className="footer-bottom-right flex gap-12 mb-12 max-md:w-full max-md:text-sm max-lg:gap-5 max-lg:mt-5">
