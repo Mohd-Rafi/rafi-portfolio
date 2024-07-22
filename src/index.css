@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  /* background: linear-gradient(
+    90deg,
+    rgba(8, 40, 65, 1) 0%,
+    rgba(60, 37, 101, 1) 44%,
+    rgba(57, 38, 89, 1) 71%,
+    rgba(41, 27, 65, 1) 99%
+  ); */
+  background: linear-gradient(
+    90deg,
+    rgb(34, 3, 3) 0%,
+    rgba(0, 0, 0, 0.94) 49%,
+    rgba(38, 5, 5, 1) 99%
+  );
+  color: white;
+  font-family: 'outfit';
+}
