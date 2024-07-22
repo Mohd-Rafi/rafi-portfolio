@@ -93,7 +93,7 @@ const Navbar = () => {
       </div>
 
       <ul
-        className={`nav-menu-mobile fixed top-0 right-0 w-64 h-full bg-slate-900 transform transition-transform duration-200 ${
+        className={`nav-menu-mobile fixed top-0 right-0 w-64 h-full bg-gradient-drawer transform transition-transform duration-200 ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         } flex flex-col items-start p-5 gap-5 space-y-4 z-10 md:hidden`}
       >
