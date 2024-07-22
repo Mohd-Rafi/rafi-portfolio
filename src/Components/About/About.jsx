@@ -68,7 +68,7 @@ const About = () => {
           <h1 className="text-4xl font-bold bg-gradient-custom bg-clip-text text-transparent max-md:text-3xl">
             6
           </h1>
-          <p className="text-lg uppercase max-md:text-sm max-md:capitalize">
+          <p className="text-lg uppercase text-center max-md:text-sm max-md:capitalize">
             Months of expreience
           </p>
         </div>
@@ -77,7 +77,7 @@ const About = () => {
           <h1 className="text-4xl font-bold bg-gradient-custom bg-clip-text text-transparent max-md:text-3xl">
             2
           </h1>
-          <p className="text-lg uppercase max-md:text-sm max-md:capitalize">
+          <p className="text-lg uppercase text-center max-md:text-sm max-md:capitalize">
             Project Completed
           </p>
         </div>
@@ -86,7 +86,7 @@ const About = () => {
           <h1 className="text-4xl font-bold bg-gradient-custom bg-clip-text text-transparent max-md:text-3xl">
             2+
           </h1>
-          <p className="text-lg uppercase max-md:text-sm max-md:capitalize">
+          <p className="text-lg uppercase text-center max-md:text-sm max-md:capitalize">
             Happy Clients
           </p>
         </div>
