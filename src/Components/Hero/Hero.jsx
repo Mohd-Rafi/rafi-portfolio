@@ -16,10 +16,10 @@ const Hero = () => {
         <span className="bg-gradient-custom bg-clip-text text-transparent mr-2">
           I'm Muhammed Rafi,
         </span>
-        Frontend Developer
+        MERN Stack Developer
       </h1>
       <p className="w-[50%] text-center text-2xl leading-[40px] max-md:w-[80%]">
-        I am MERN Stack Developer from Ernakulam, Kerala, India
+        I am Full Stack Developer from Ernakulam, Kerala, India
       </p>
       <div className="hero-action flex items-center gap-[25px] text-xl font-bold">
         <div className="hero-connect py-[20px] px-[45px]  rounded-full bg-gradient-custom cursor-pointer hover:scale-105 ease-in duration-100 hover:border border-white max-md:px-5 max-md:text-lg max-md:py-4">

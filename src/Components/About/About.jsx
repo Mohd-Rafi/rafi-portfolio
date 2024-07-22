@@ -4,7 +4,7 @@ const About = () => {
   return (
     <div
       id="about"
-      className="select-none about flex flex-col items-center justify-center gap-[80px] my-[80px] mx-[170px] max-md:80px max-md:my-12 max-md:mx-16 max-md:items-start"
+      className="select-none about flex flex-col items-center justify-center gap-[80px] my-[80px] mx-[170px]  max-md:my-18 max-md:mx-10 max-md:items-start"
     >
       <div className="about-title relative">
         <h2 className="px-[30px] text-5xl font-bold max-md:text-3xl max-md:px-0">

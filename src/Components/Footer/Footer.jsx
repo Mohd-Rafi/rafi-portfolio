@@ -2,7 +2,7 @@ import React from 'react';
 import './Footer.css';
 const Footer = () => {
   return (
-    <div className="footer my-[50px] mx-[170px] flex flex-col gap-7 max-md:mx-5">
+    <div className="footer my-[50px] mx-[170px] flex flex-col gap-7 max-md:mx-10">
       <div className="footer-top flex justify-between max-xl:flex-col max-xl:gap-10">
         <div className="footer-top-left">
           <img src="/assets/new-logo.png" alt="" className="h-12" />
