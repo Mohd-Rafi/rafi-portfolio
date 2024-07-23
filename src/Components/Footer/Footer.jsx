@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.css';
+import { Slide } from 'react-awesome-reveal';
 const Footer = () => {
   return (
     <div className="footer my-[50px] mx-[170px] flex flex-col gap-7 max-md:mx-10">
@@ -20,9 +21,11 @@ const Footer = () => {
               className="outline-none border-none bg-transparent hover:border-2 hover:border-white max-lg:w-[90%]"
             />
           </div>
-          <div className="footer-subscribe py-4 px-12 rounded-full bg-gradient-custom cursor-pointer ease-in duration-300 hover:scale-110">
-            Subscribe
-          </div>
+          <Slide direction="up">
+            <div className="footer-subscribe py-4 px-12 rounded-full bg-gradient-custom cursor-pointer ease-in duration-300 hover:scale-110">
+              Subscribe
+            </div>
+          </Slide>
         </div>
       </div>
       <hr />
