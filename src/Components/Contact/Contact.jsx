@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-
+import { ToastContainer, toast, Bounce } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './Contact.css';
+import { Slide } from 'react-awesome-reveal';
 const Contact = () => {
   // const [items, SetItems] = useState({ name: '', email: '', message: '' });
 
@@ -16,11 +18,31 @@ const Contact = () => {
     var message = formData.get('message');
 
     if (!name || !email || !message) {
-      alert('Please fill in all the fields.');
+      toast.warn('Please fill all fields correctly', {
+        position: 'top-center',
+        autoClose: 1300,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+        transition: Bounce,
+      });
       return;
     }
     if (!email.includes('@gmail.com')) {
-      alert('Please enter correct email id');
+      toast.warn('Enter correct email id ', {
+        position: 'top-center',
+        autoClose: 1300,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+        transition: Bounce,
+      });
       return;
     }
     console.log(formData);
@@ -37,7 +59,17 @@ const Contact = () => {
     }).then(res => res.json());
 
     if (res.success) {
-      alert(res.message);
+      toast.success('Form Submitted Successfully', {
+        position: 'top-center',
+        autoClose: 3300,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+        transition: Bounce,
+      });
       // Clear the input fields for email and message
       event.target.querySelector('input[name="name"]').value = '';
       event.target.querySelector('input[name="email"]').value = '';
@@ -50,6 +82,7 @@ const Contact = () => {
       id="contact"
       className="contact flex flex-col items-center justify-center gap-20 my-10 mx-[170px] max-md:mx-[30px] max-md:items-start"
     >
+      <ToastContainer></ToastContainer>
       <div className="contact-title relative">
         <h1 className="text-5xl px-15 max-md:text-3xl">Get in touch</h1>
         <img
@@ -67,24 +100,34 @@ const Contact = () => {
             I'm currently available to take on new projects, so feel free to
             send me a message
           </p>
-          <div className="contact-details flex flex-col gap-7 text-lg">
-            <div className="contact-detail">
-              <img src="/assets/mail_icon.svg" alt="" className="max-md:w-7" />
-              <p>muhammed10rafi@gmail.com</p>
+          <Slide direction="up">
+            <div className="contact-details flex flex-col gap-7 text-lg">
+              <div className="contact-detail">
+                <img
+                  src="/assets/mail_icon.svg"
+                  alt=""
+                  className="max-md:w-7"
+                />
+                <p>muhammed10rafi@gmail.com</p>
+              </div>
+              <div className="contact-detail">
+                <img
+                  src="/assets/call_icon.svg"
+                  alt=""
+                  className="max-md:w-7"
+                />
+                <p>+91 9995162529</p>
+              </div>
+              <div className="contact-detail">
+                <img
+                  src="/assets/location_icon.svg"
+                  alt=""
+                  className="max-md:w-7"
+                />
+                <p>Ernakulam</p>
+              </div>
             </div>
-            <div className="contact-detail">
-              <img src="/assets/call_icon.svg" alt="" className="max-md:w-7" />
-              <p>+91 9995162529</p>
-            </div>
-            <div className="contact-detail">
-              <img
-                src="/assets/location_icon.svg"
-                alt=""
-                className="max-md:w-7"
-              />
-              <p>Ernakulam</p>
-            </div>
-          </div>
+          </Slide>
         </div>
         <form
           onSubmit={onSubmit}
@@ -117,12 +160,14 @@ const Contact = () => {
             placeholder="Enter your message"
             className="w-full border-none p-6 rounded-sm bg-[#32323c] max-md:w-[100%]"
           />
-          <button
-            type="submit"
-            className="contact-submit border-none rounded-3xl bg-gradient-custom text-xl py-4 px-6 mb-12 max-md:text-lg max-md:mx-auto cursor-pointer ease-in duration-300 hover:scale-105"
-          >
-            Submit now
-          </button>
+          <Slide direction="up" className="max-md:mx-auto">
+            <button
+              type="submit"
+              className="contact-submit border-none rounded-3xl bg-gradient-custom text-xl py-4 px-6 mb-12 max-md:text-lg  cursor-pointer ease-in duration-300 hover:scale-105"
+            >
+              Submit now
+            </button>
+          </Slide>
         </form>
       </div>
     </div>

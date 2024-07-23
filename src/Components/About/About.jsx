@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './About.css';
+import { Fade } from 'react-awesome-reveal';
 const About = () => {
   return (
     <div
@@ -64,13 +65,13 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="about-achievements flex w-full gap-4 justify-around mb-20 max-md:justify-between max-md:gap-3">
+      <div className="about-achievements flex w-full gap-4 justify-around mb-10 max-md:justify-between max-md:gap-3">
         <div className="about-achievement flex flex-col items-center gap-2  hover:scale-105 ease-in duration-150">
           <h1 className="text-4xl font-bold bg-gradient-custom bg-clip-text text-transparent max-md:text-3xl">
             6
           </h1>
           <p className="text-lg uppercase text-center max-md:text-sm max-md:capitalize">
-            Months of expreience
+            Months of experience
           </p>
         </div>
         <hr className="h-10 bg-white w-1 max-md:h-20" />

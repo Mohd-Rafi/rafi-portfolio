@@ -6,7 +6,7 @@ const MyWork = () => {
   return (
     <div
       id="work"
-      className="select-none mt-24 my-work flex flex-col items-center justify-center gap-20 my-20 mx-[170px] max-md:mx-8 max-md:items-start"
+      className="select-none mt-24 my-work flex flex-col items-center justify-center gap-20 my-10 mx-[170px] max-md:mx-8 max-md:items-start"
     >
       <div className="mywork-title relative">
         <h1 className="text-5xl px-7 font-bold max-md:px-2 max-md:text-3xl">
@@ -27,8 +27,8 @@ const MyWork = () => {
           />
         ))}
       </div>
-      <Slide direction="up" triggerOnce className="max-md:mx-auto">
-        <div className="flex gap-5 border-2 border-white py-4 px-6 rounded-full mb-10 hover:border-pink-700 ease-in duration-200 max-md:text-sm ">
+      <Slide direction="up" className="max-md:mx-auto">
+        <div className="flex gap-5 border-2 border-white py-4 px-6 rounded-full hover:border-pink-700 ease-in duration-200 max-md:text-sm ">
           <p>Show More</p>
           <img
             src="/assets/arrow_icon.svg"

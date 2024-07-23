@@ -20,7 +20,7 @@ const Services = () => {
       <div className="service-container grid grid-cols-3 gap-10 max-lg:grid-cols-2 max-lg:gap-4 max-sm:grid-cols-1">
         {Services_data.map((item, i) => (
           <div
-            className="services-format flex flex-col justify-center gap-5 p-[60px] max-md:p-4 rounded-md border border-white hover:border hover:border-red-600  ease-in duration-300"
+            className="services-format flex flex-col justify-center gap-5 p-[40px] max-md:p-4 rounded-md border border-white hover:border hover:border-red-600  ease-in duration-300"
             key={i}
           >
             <h3 className="text-3xl font-bold">{item.s_no}</h3>
