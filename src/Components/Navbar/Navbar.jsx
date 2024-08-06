@@ -2,12 +2,18 @@ import React, { useState } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { Cross as Hamburger } from 'hamburger-react';
 import './Navbar.css';
+import { Helmet } from 'react-helmet';
 
 const Navbar = () => {
   const [menu, setMenu] = useState('home');
   const [isOpen, setOpen] = useState(false);
   return (
     <div className="navbar flex items-center justify-between mx-[170px] my-[20px] max-lg:mx-[50px] max-sm:mx-2">
+      <Helmet>
+        <title>Muhammed Rafi Portfolio</title>
+        <meta name="description" content="Muhammed Rafi Nellikuzhy Portfolio" />
+        <meta name="keywords" content="Muhammed Rafi Nellikuzhy Portfolio" />
+      </Helmet>
       <img
         src="/assets/new-logo.png"
         alt=""

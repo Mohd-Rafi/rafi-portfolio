@@ -2,12 +2,18 @@ import React from 'react';
 import mywork_data from '../../utils/mywork_data';
 import './MyWork.css';
 import { Slide } from 'react-awesome-reveal';
+import { Helmet } from 'react-helmet';
 const MyWork = () => {
   return (
     <div
       id="work"
       className="select-none mt-24 my-work flex flex-col items-center justify-center gap-20 my-10 mx-[170px] max-md:mx-8 max-md:items-start"
     >
+      <Helmet>
+        <title>Muhammed Rafi Portfolio</title>
+        <meta name="description" content="Muhammed Rafi Nellikuzhy Portfolio" />
+        <meta name="keywords" content="Muhammed Rafi Nellikuzhy Portfolio" />
+      </Helmet>
       <div className="mywork-title relative">
         <h1 className="text-5xl px-7 font-bold max-md:px-2 max-md:text-3xl">
           My Latest Work

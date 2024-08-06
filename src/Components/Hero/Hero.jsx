@@ -2,6 +2,7 @@ import React from 'react';
 import './Hero.css';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { Fade, Slide } from 'react-awesome-reveal';
+import { Helmet } from 'react-helmet';
 
 const Hero = () => {
   return (
@@ -9,6 +10,11 @@ const Hero = () => {
       className="select-none hero flex items-center flex-col gap-5 max-lg:mt-10"
       id="home"
     >
+      <Helmet>
+        <title>Muhammed Rafi Portfolio</title>
+        <meta name="description" content="Muhammed Rafi Nellikuzhy Portfolio" />
+        <meta name="keywords" content="Muhammed Rafi Nellikuzhy Portfolio" />
+      </Helmet>
       <img
         src="/assets/profile_pic.jpg"
         alt=""

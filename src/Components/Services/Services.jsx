@@ -1,12 +1,18 @@
 import React from 'react';
 import Services_data from '../../utils/services_data.js';
 import './Services.css';
+import { Helmet } from 'react-helmet';
 const Services = () => {
   return (
     <div
       id="service"
       className="services flex flex-col items-center justify-center gap-[80px] my-[80px] mx-[170px] max-md:items-start max-md:gap-16 max-md:my-[20px] max-md:mx-8 select-none"
     >
+      <Helmet>
+        <title>Muhammed Rafi Portfolio</title>
+        <meta name="description" content="Muhammed Rafi Nellikuzhy Portfolio" />
+        <meta name="keywords" content="Muhammed Rafi Nellikuzhy Portfolio" />
+      </Helmet>
       <div className="services-title relative">
         <h1 className="text-6xl px-7 max-md:p-0 max-md:text-3xl">
           My Services

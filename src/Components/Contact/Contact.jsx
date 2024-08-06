@@ -3,6 +3,7 @@ import { ToastContainer, toast, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './Contact.css';
 import { Slide } from 'react-awesome-reveal';
+import { Helmet } from 'react-helmet';
 const Contact = () => {
   // const [items, SetItems] = useState({ name: '', email: '', message: '' });
 
@@ -82,6 +83,11 @@ const Contact = () => {
       id="contact"
       className="contact flex flex-col items-center justify-center gap-20 my-10 mx-[170px] max-md:mx-[30px] max-md:items-start"
     >
+      <Helmet>
+        <title>Muhammed Rafi Portfolio</title>
+        <meta name="description" content="Muhammed Rafi Nellikuzhy Portfolio" />
+        <meta name="keywords" content="Muhammed Rafi Nellikuzhy Portfolio" />
+      </Helmet>
       <ToastContainer></ToastContainer>
       <div className="contact-title relative">
         <h1 className="text-5xl px-15 max-md:text-3xl">Get in touch</h1>
