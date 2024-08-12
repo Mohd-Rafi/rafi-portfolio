@@ -1,13 +1,67 @@
-import React from 'react';
-
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import './About.css';
 import { Fade } from 'react-awesome-reveal';
 import { Helmet } from 'react-helmet';
 const About = () => {
+  const items = [
+    {
+      name: 'HTML & CSS',
+      className: 'w-[60%]',
+    },
+    {
+      name: 'React Js',
+      className: 'w-[60%]',
+    },
+    {
+      name: 'JavaScript',
+      className: 'w-[40%]',
+    },
+    {
+      name: 'Node Js',
+      className: 'w-[40%]',
+    },
+    {
+      name: 'Mongo DB',
+      className: 'w-[50%]',
+    },
+    {
+      name: 'Express Js',
+      className: 'w-[50%]',
+    },
+  ];
+  const variants1 = {
+    hidden: { opacity: 1, scale: 1 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const variants2 = {
+    hidden: { y: 0, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+  };
+
+  const ref = useRef();
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start center', 'end start'],
+  });
+  const yBg = useTransform(scrollYProgress, [0, 1], ['-5deg', '10deg']);
+
   return (
     <div
+      ref={ref}
       id="about"
-      className="select-none about flex flex-col items-center justify-center gap-[80px] my-[80px] mx-[170px]  max-md:my-18 max-md:mx-8 max-md:items-start"
+      className="relative select-none about flex flex-col items-center justify-center gap-[80px] my-[80px] mx-[170px]  max-md:my-18 max-md:mx-8 max-md:items-start"
     >
       <Helmet>
         <title>Muhammed Rafi Portfolio</title>
@@ -26,10 +80,11 @@ const About = () => {
       </div>
       <div className="about-section flex gap-[80px] max-md:flex-col">
         <div className="about-left">
-          <img
+          <motion.img
+            style={{ rotate: yBg }}
             src="/assets/rafi_photo.jpg"
             alt=""
-            className="rounded-lg h-[80%] max-md:h-[80%]"
+            className="relative rounded-lg h-[80%] max-md:h-[80%]"
           />
         </div>
         <div className="about-right flex flex-col gap-[80px]">
@@ -43,32 +98,20 @@ const About = () => {
               extensive expreience but also in the enthusiasm and dedication
             </p>
           </div>
-          <div className="about-skills flex flex-col gap-5">
-            <div className="about-skill">
-              <p>HTML & CSS</p>
-              <hr className="w-[60%]" />
-            </div>
-            <div className="about-skill">
-              <p>React Js</p>
-              <hr className="w-[60%]" />
-            </div>
-            <div className="about-skill">
-              <p>JavaScript</p>
-              <hr className="w-[40%]" />
-            </div>
-            <div className="about-skill">
-              <p>Node Js</p>
-              <hr className="w-[40%]" />
-            </div>
-            <div className="about-skill">
-              <p>Mongo DB</p>
-              <hr className="w-[50%]" />
-            </div>
-            <div className="about-skill">
-              <p>Express Js</p>
-              <hr className="w-[50%]" />
-            </div>
-          </div>
+          <motion.div
+            variants={variants1}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="about-skills flex flex-col gap-5"
+          >
+            {items.map((item, i) => (
+              <motion.div variants={variants2} key={i} className="about-skill">
+                <p>{item.name}</p>
+                <hr className={item.className} />
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </div>
       <div className="about-achievements flex w-full gap-4 justify-around mb-10 max-md:justify-between max-md:gap-3">

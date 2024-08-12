@@ -1,8 +1,30 @@
 import React from 'react';
 import Services_data from '../../utils/services_data.js';
+import { motion } from 'framer-motion';
 import './Services.css';
 import { Helmet } from 'react-helmet';
 const Services = () => {
+  const variants1 = {
+    hidden: { opacity: 1, scale: 0 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delayChildren: 0.2,
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
+  const variants2 = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 1,
+      },
+    },
+  };
   return (
     <div
       id="service"
@@ -23,9 +45,16 @@ const Services = () => {
           className="absolute bottom-0 right-3 z-[-1] w-[50%] h-[80%]"
         />
       </div>
-      <div className="service-container grid grid-cols-3 gap-10 max-lg:grid-cols-2 max-lg:gap-4 max-sm:grid-cols-1">
+      <motion.div
+        variants={variants1}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="service-container grid grid-cols-3 gap-10 max-lg:grid-cols-2 max-lg:gap-4 max-sm:grid-cols-1"
+      >
         {Services_data.map((item, i) => (
-          <div
+          <motion.div
+            variants={variants2}
             className="services-format flex flex-col justify-center gap-5 p-[40px] max-md:p-4 rounded-md border border-white hover:border hover:border-red-600  ease-in duration-300"
             key={i}
           >
@@ -40,9 +69,9 @@ const Services = () => {
               <p>Read More</p>
               <img src="/assets/arrow_icon.svg" alt="" className="max-md:w-5" />
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };

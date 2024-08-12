@@ -1,12 +1,21 @@
 import React, { useState } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { Cross as Hamburger } from 'hamburger-react';
+import { motion } from 'framer-motion';
 import './Navbar.css';
 import { Helmet } from 'react-helmet';
 
 const Navbar = () => {
   const [menu, setMenu] = useState('home');
   const [isOpen, setOpen] = useState(false);
+
+  const navitems = [
+    { name: 'Home', href: '#home' },
+    { name: 'About Me', href: '#about' },
+    { name: 'Services', href: '#service' },
+    { name: 'Portfolio', href: '#work' },
+    { name: 'Contact', href: '#contact' },
+  ];
   return (
     <div className="navbar flex items-center justify-between mx-[170px] my-[20px] max-lg:mx-[50px] max-sm:mx-2">
       <Helmet>
@@ -107,56 +116,27 @@ const Navbar = () => {
           isOpen ? 'translate-x-0' : 'translate-x-full'
         } flex flex-col items-start p-5 gap-5 space-y-4 z-10 md:hidden`}
       >
-        <li className="flex flex-col gap-1 hover:scale-105 ease-in duration-100 uppercase mt-14 relative left-5">
-          <AnchorLink
-            className="anchor-link"
-            offset={50}
-            href="#home"
-            onClick={() => setOpen(!isOpen)}
+        {navitems.map((item, i) => (
+          <li
+            key={i}
+            className="flex flex-col gap-1 hover:scale-105 ease-in duration-100 uppercase mt-14 relative left-5"
           >
-            <p>Home</p>
-          </AnchorLink>
-        </li>
-        <li className="flex flex-col gap-1 hover:scale-105 ease-in duration-100 uppercase relative left-5">
-          <AnchorLink
-            className="anchor-link"
-            offset={50}
-            href="#about"
-            onClick={() => setOpen(!isOpen)}
-          >
-            <p>About Me</p>
-          </AnchorLink>
-        </li>
-        <li className="flex flex-col gap-1 hover:scale-105 ease-in duration-100 uppercase relative left-5">
-          <AnchorLink
-            className="anchor-link"
-            offset={50}
-            href="#service"
-            onClick={() => setOpen(!isOpen)}
-          >
-            <p>Services</p>
-          </AnchorLink>
-        </li>
-        <li className="flex flex-col gap-1 hover:scale-105 ease-in duration-100 uppercase relative left-5">
-          <AnchorLink
-            className="anchor-link"
-            offset={50}
-            href="#work"
-            onClick={() => setOpen(!isOpen)}
-          >
-            <p>Portfolio</p>
-          </AnchorLink>
-        </li>
-        <li className="flex flex-col gap-1 hover:scale-105 ease-in duration-100 uppercase relative left-5">
-          <AnchorLink
-            className="anchor-link"
-            offset={50}
-            href="#contact"
-            onClick={() => setOpen(!isOpen)}
-          >
-            <p>Contact</p>
-          </AnchorLink>
-        </li>
+            <AnchorLink
+              className="anchor-link"
+              offset={50}
+              href={item.href}
+              onClick={() => setOpen(!isOpen)}
+            >
+              <motion.p
+                initial={{ x: 200 }}
+                whileInView={{ x: 0 }}
+                transition={{ duration: 0.4 }}
+              >
+                {item.name}
+              </motion.p>
+            </AnchorLink>
+          </li>
+        ))}
       </ul>
     </div>
   );
