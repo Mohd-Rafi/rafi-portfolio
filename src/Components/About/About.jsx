@@ -53,9 +53,9 @@ const About = () => {
   const ref = useRef();
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['start center', 'end start'],
+    offset: ['start end', 'end center'],
   });
-  const yBg = useTransform(scrollYProgress, [0, 1], ['-5deg', '10deg']);
+  const yBg = useTransform(scrollYProgress, [0, 1], [1.2, 0.6]);
 
   return (
     <div
@@ -79,12 +79,12 @@ const About = () => {
         />
       </div>
       <div className="about-section flex gap-[80px] max-md:flex-col">
-        <div className="about-left">
+        <div className="about-left overflow-hidden">
           <motion.img
-            style={{ rotate: yBg }}
+            style={{ scale: yBg }}
             src="/assets/rafi_photo.jpg"
             alt=""
-            className="relative rounded-lg h-[80%] max-md:h-[80%]"
+            className=" rounded-lg h-[80%] max-md:h-[80%]"
           />
         </div>
         <div className="about-right flex flex-col gap-[80px]">
@@ -102,7 +102,6 @@ const About = () => {
             variants={variants1}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
             className="about-skills flex flex-col gap-5"
           >
             {items.map((item, i) => (
@@ -114,7 +113,14 @@ const About = () => {
           </motion.div>
         </div>
       </div>
-      <div className="about-achievements flex w-full gap-4 justify-around mb-10 max-md:justify-between max-md:gap-3">
+      <motion.div
+        initial={{ x: -40 }}
+        whileInView={{ x: 0 }}
+        transition={{
+          duration: 1,
+        }}
+        className="about-achievements flex w-full gap-4 justify-around mb-10 max-md:justify-between max-md:gap-3"
+      >
         <div className="about-achievement flex flex-col items-center gap-2  hover:scale-105 ease-in duration-150">
           <h1 className="text-4xl font-bold bg-gradient-custom bg-clip-text text-transparent max-md:text-3xl">
             6
@@ -141,7 +147,7 @@ const About = () => {
             Happy Clients
           </p>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

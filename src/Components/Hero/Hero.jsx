@@ -16,7 +16,7 @@ const Hero = () => {
         <meta name="keywords" content="Muhammed Rafi Nellikuzhy Portfolio" />
       </Helmet>
       <img
-        src="/assets/profile_pic.jpg"
+        src="/assets/profile_pic.webp"
         alt=""
         className="mt-[0px] max-w-[260px] max-h-[260px] rounded-full mb-5 ease-in duration-200 max-md:hover:border-4 max-md:hover:scale-105 border-amber-600"
       />
@@ -36,9 +36,14 @@ const Hero = () => {
         </h1>
       </motion.div>
 
-      <p className="w-[50%] text-center text-2xl leading-[40px] max-md:w-[80%]">
+      <motion.p
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+        className="w-[50%] text-center text-2xl leading-[40px] max-md:w-[80%]"
+      >
         Full Stack Developer Who Turns Code into Impactful User Experiences
-      </p>
+      </motion.p>
       <motion.div
         initial={{ y: 40, scale: 0.8 }}
         whileInView={{ y: 0, scale: 1 }}
