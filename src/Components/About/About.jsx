@@ -36,16 +36,16 @@ const About = () => {
       opacity: 1,
       scale: 1,
       transition: {
-        delayChildren: 0.3,
+        duration: 1,
+        delayChildren: 0.2,
         staggerChildren: 0.2,
       },
     },
   };
 
   const variants2 = {
-    hidden: { y: 0, opacity: 0 },
+    hidden: { opacity: 0 },
     visible: {
-      y: 0,
       opacity: 1,
     },
   };
