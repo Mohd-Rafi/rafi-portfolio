@@ -102,6 +102,7 @@ const About = () => {
             variants={variants1}
             initial="hidden"
             whileInView="visible"
+            viewport={{ once: true }}
             className="about-skills flex flex-col gap-5"
           >
             {items.map((item, i) => (
