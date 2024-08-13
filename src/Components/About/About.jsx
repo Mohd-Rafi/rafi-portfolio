@@ -31,10 +31,10 @@ const About = () => {
     },
   ];
   const variants1 = {
-    hidden: { opacity: 1, scale: 1 },
+    hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      scale: 1,
+
       transition: {
         duration: 1,
         delayChildren: 0.2,
@@ -44,8 +44,9 @@ const About = () => {
   };
 
   const variants2 = {
-    hidden: { opacity: 0 },
+    hidden: { x: 50, opacity: 0 },
     visible: {
+      x: 0,
       opacity: 1,
     },
   };
