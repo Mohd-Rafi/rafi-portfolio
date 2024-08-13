@@ -27,12 +27,12 @@ const Hero = () => {
         style={{ scale: yBg }}
         src="/assets/profile_pic.webp"
         alt=""
-        className="mt-[0px] max-w-[260px] max-h-[260px] rounded-full mb-5 ease-in duration-200 max-md:hover:border-4 max-md:hover:scale-105 border-amber-600"
+        className=" mt-[0px] max-w-[260px] max-h-[260px] rounded-full mb-5 ease-in duration-200 max-md:hover:border-4 max-md:hover:scale-105  ring-orange-500 ring-4"
       />
       <motion.div
         className="text-center w-[50%] text-5xl font-bold max-md:w-[80%] max-md:text-3xl"
         initial={{ y: -40, opacity: 0, scale: 0.8 }}
-        animate={{ y: 0, opacity: 1, scale: 1 }}
+        whileInView={{ y: 0, opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
       >
         <h1>
@@ -47,7 +47,7 @@ const Hero = () => {
 
       <motion.p
         initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
+        whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
         className="w-[50%] text-center text-2xl leading-[40px] max-md:w-[80%]"
       >

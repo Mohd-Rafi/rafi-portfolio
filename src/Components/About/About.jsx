@@ -84,7 +84,7 @@ const About = () => {
             style={{ scale: yBg }}
             src="/assets/rafi_photo.jpg"
             alt=""
-            className=" rounded-lg h-[80%] max-md:h-[80%]"
+            className=" rounded-lg h-[80%] max-md:h-[80%] shadow-md shadow-pink-400"
           />
         </div>
         <div className="about-right flex flex-col gap-[80px]">
