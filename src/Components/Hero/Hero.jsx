@@ -57,7 +57,6 @@ const Hero = () => {
         initial={{ y: 40, scale: 0.8 }}
         whileInView={{ y: 0, scale: 1 }}
         transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
         className="hero-action flex items-center gap-[25px] text-xl font-bold"
       >
         <div className="hero-connect py-[20px] px-[45px]  rounded-full bg-gradient-custom cursor-pointer hover:scale-105 ease-in duration-100 hover:border border-white max-md:px-5 max-md:text-lg max-md:py-4">
