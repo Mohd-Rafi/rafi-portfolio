@@ -127,13 +127,7 @@ const Navbar = () => {
               href={item.href}
               onClick={() => setOpen(!isOpen)}
             >
-              <motion.p
-                initial={{ x: 200 }}
-                whileInView={{ x: 0 }}
-                transition={{ duration: 0.4 }}
-              >
-                {item.name}
-              </motion.p>
+              <p>{item.name}</p>
             </AnchorLink>
           </li>
         ))}

@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './Hero.css';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { Helmet } from 'react-helmet';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 const Hero = () => {
+  const ref = useRef();
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start start', 'end center'],
+  });
+  const yBg = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
+
   return (
     <div
+      ref={ref}
       className="select-none hero flex items-center flex-col gap-5 max-lg:mt-10"
       id="home"
     >
@@ -15,7 +23,8 @@ const Hero = () => {
         <meta name="description" content="Muhammed Rafi Nellikuzhy Portfolio" />
         <meta name="keywords" content="Muhammed Rafi Nellikuzhy Portfolio" />
       </Helmet>
-      <img
+      <motion.img
+        style={{ scale: yBg }}
         src="/assets/profile_pic.webp"
         alt=""
         className="mt-[0px] max-w-[260px] max-h-[260px] rounded-full mb-5 ease-in duration-200 max-md:hover:border-4 max-md:hover:scale-105 border-amber-600"
