@@ -25,7 +25,7 @@ const Navbar = () => {
       </Helmet>
       <img
         src="/assets/new-logo.png"
-        alt=""
+        alt="/assets/new-logo.png"
         className="w-32 h-12 max-md:w-24 max-md:h-9"
       />
 
