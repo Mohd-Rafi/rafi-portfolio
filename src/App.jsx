@@ -17,7 +17,7 @@ const App = () => {
   return (
     <>
       <Helmet>
-        <title>Muhammed Rafi Portfolio</title>
+        <title>Muhammed Rafi Nellikuzhy Portfolio</title>
         <meta name="description" content="Muhammed Rafi Nellikuzhy Portfolio" />
         <meta name="keywords" content="Muhammed Rafi Nellikuzhy Portfolio" />
       </Helmet>
