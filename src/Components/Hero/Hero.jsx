@@ -15,11 +15,11 @@ const Hero = () => {
   return (
     <div
       ref={ref}
-      className="select-none hero flex items-center flex-col gap-5 max-lg:mt-10"
+      className="pt-20 max-md:pt-1 select-none hero flex items-center flex-col gap-5 max-lg:mt-10"
       id="home"
     >
       <Helmet>
-        <title>Muhammed Rafi Portfolio</title>
+        <title>Muhammed Rafi Nellikuzhy Portfolio</title>
         <meta name="description" content="Muhammed Rafi Nellikuzhy Portfolio" />
         <meta name="keywords" content="Muhammed Rafi Nellikuzhy Portfolio" />
       </Helmet>
@@ -27,7 +27,7 @@ const Hero = () => {
         style={{ scale: yBg }}
         src="/assets/profile_pic.webp"
         alt=""
-        className=" mt-[0px] max-w-[260px] max-h-[260px] rounded-full mb-5 ease-in duration-200 max-md:hover:border-4 max-md:hover:scale-105  ring-orange-500 ring-4"
+        className=" mt-[10px] max-lg:mt-[50px] max-w-[260px] max-h-[260px] rounded-full mb-5 ease-in duration-200 max-md:hover:border-4 max-md:hover:scale-105  ring-orange-500 ring-4"
       />
       <motion.div
         className="text-center w-[50%] text-5xl font-bold max-md:w-[80%] max-md:text-3xl"

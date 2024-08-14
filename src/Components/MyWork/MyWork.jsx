@@ -10,7 +10,7 @@ const MyWork = () => {
       className="select-none mt-24 my-work flex flex-col items-center justify-center gap-20 my-10 mx-[170px] max-md:mx-8 max-md:items-start"
     >
       <Helmet>
-        <title>Muhammed Rafi Portfolio</title>
+        <title>Muhammed Rafi Nellikuzhy Portfolio</title>
         <meta name="description" content="Muhammed Rafi Nellikuzhy Portfolio" />
         <meta name="keywords" content="Muhammed Rafi Nellikuzhy Portfolio" />
       </Helmet>

@@ -84,7 +84,7 @@ const Contact = () => {
       className="contact flex flex-col items-center justify-center gap-20 my-10 mx-[170px] max-md:mx-[30px] max-md:items-start"
     >
       <Helmet>
-        <title>Muhammed Rafi Portfolio</title>
+        <title>Muhammed Rafi Nellikuzhy Portfolio</title>
         <meta name="description" content="Muhammed Rafi Nellikuzhy Portfolio" />
         <meta name="keywords" content="Muhammed Rafi Nellikuzhy Portfolio" />
       </Helmet>

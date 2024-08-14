@@ -7,8 +7,8 @@ import Contact from './Components/Contact/Contact';
 import Footer from './Components/Footer/Footer';
 import { Helmet } from 'react-helmet';
 import ReactGA from 'react-ga4';
-import './App.css';
 import { useEffect } from 'react';
+import './App.css';
 
 const App = () => {
   useEffect(() => {

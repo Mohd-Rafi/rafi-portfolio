@@ -10,41 +10,69 @@ const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
 
   const navitems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About Me', href: '#about' },
-    { name: 'Services', href: '#service' },
-    { name: 'Portfolio', href: '#work' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '#home', setmenu: 'home' },
+    { name: 'About Me', href: '#about', setmenu: 'about' },
+    { name: 'Services', href: '#service', setmenu: 'service' },
+    { name: 'Portfolio', href: '#work', setmenu: 'work' },
+    { name: 'Contact', href: '#contact', setmenu: 'contact' },
   ];
+  const variants1 = {
+    hidden: { opacity: 1, scale: 0 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const variants2 = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+  };
   return (
-    <div className="navbar flex items-center justify-between mx-[170px] my-[20px] max-lg:mx-[50px] max-sm:mx-2">
+    <div className="z-20 w-screen h-20 fixed top-0 backdrop-blur-3xl  flex items-center justify-around max-md:justify-between px-[10px] ">
       <Helmet>
-        <title>Muhammed Rafi Portfolio</title>
+        <title>Muhammed Rafi Nellikuzhy Portfolio</title>
         <meta name="description" content="Muhammed Rafi Nellikuzhy Portfolio" />
         <meta name="keywords" content="Muhammed Rafi Nellikuzhy Portfolio" />
       </Helmet>
-      <img
-        src="/assets/new-logo.png"
-        alt="/assets/new-logo.png"
-        className="w-32 h-12 max-md:w-24 max-md:h-9"
-      />
+      <AnchorLink className="anchor-link" offset={50} href="#home">
+        <img
+          src="/assets/new-logo.png"
+          alt=""
+          className="w-32 h-12 max-md:w-24 max-md:h-9"
+        />
+      </AnchorLink>
 
-      <ul className="nav-menu flex items-center gap-[60px] list-none max-md:hidden">
-        <li className="flex flex-col gap-1">
-          <AnchorLink className="anchor-link" offset={50} href="#home">
-            <p onClick={() => setMenu('home')}>Home</p>
-          </AnchorLink>
-          {menu == 'home' ? (
-            <img
-              src="/assets/nav_underline.svg"
-              alt=""
-              className="flex m-auto"
-            />
-          ) : (
-            ''
-          )}
-        </li>
-        <li className="flex flex-col gap-1">
+      <ul
+        variant={variants1}
+        initial="visible"
+        animate="hidden"
+        className="nav-menu flex items-center justify-center gap-[100px] list-none max-md:hidden"
+      >
+        {navitems.map((item, i) => (
+          <li key={i} className="flex flex-col gap-1">
+            <AnchorLink className="anchor-link" offset={50} href={item.href}>
+              <p onClick={() => setMenu(item.setmenu)}>{item.name}</p>
+            </AnchorLink>
+            {menu == item.setmenu ? (
+              <img
+                src="/assets/nav_underline.svg"
+                alt=""
+                className="flex m-auto"
+              />
+            ) : (
+              ''
+            )}
+          </li>
+        ))}
+        {/* <li className="flex flex-col gap-1">
           <AnchorLink className="anchor-link" offset={50} href="#about">
             <p onClick={() => setMenu('about')}>About Me</p>
           </AnchorLink>
@@ -99,21 +127,20 @@ const Navbar = () => {
           ) : (
             ''
           )}
-        </li>
+        </li> */}
       </ul>
-      <div className="nav-connect bg-gradient-custom py-[20px] px-[40px] rounded-[50px] text-lg  cursor-pointer hover:scale-105 hover:ease-in duration-200 max-xl:hidden">
+      <div className="nav-connect bg-gradient-custom py-[20px] px-[40px] rounded-[50px] text-lg cursor-pointer hover:scale-105 hover:ease-in duration-200 max-xl:hidden">
         <AnchorLink className="anchor-link" offset={50} href="#contact">
           <p className="line-clamp-1">Connect With Me</p>
         </AnchorLink>
       </div>
-
-      <div className="md:hidden fixed right-2 top-2 z-20 bg-[#3d222258] rounded">
+      <div className="md:hidden relative right-10 top-0 z-50 bg-[#3d222258] rounded">
         <Hamburger toggled={isOpen} toggle={() => setOpen(!isOpen)} />
       </div>
 
       <ul
-        className={`nav-menu-mobile fixed top-0 right-0 w-64 h-full bg-gradient-drawer rounded-tl-3xl rounded-bl-3xl transform transition-transform duration-200 ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
+        className={`nav-menu-mobile fixed top-0 right-0 w-64 h-screen bg-gradient-drawer rounded-tl-3xl rounded-bl-3xl transform transition-transform duration-200 ${
+          isOpen ? ' translate-x-0' : 'translate-x-full'
         } flex flex-col items-start p-5 gap-5 space-y-4 z-10 md:hidden`}
       >
         {navitems.map((item, i) => (
