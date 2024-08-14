@@ -36,7 +36,7 @@ const Navbar = () => {
     },
   };
   return (
-    <div className="z-20 w-screen h-20 fixed top-0 backdrop-blur-3xl  flex items-center justify-around max-md:justify-between px-[10px] ">
+    <div className="z-20 w-screen h-20 fixed top-0 backdrop-blur-3xl  flex items-center justify-around max-md:justify-between px-[10px] max-md:px-[5px]">
       <Helmet>
         <title>Muhammed Rafi Nellikuzhy Portfolio</title>
         <meta name="description" content="Muhammed Rafi Nellikuzhy Portfolio" />
@@ -134,7 +134,7 @@ const Navbar = () => {
           <p className="line-clamp-1">Connect With Me</p>
         </AnchorLink>
       </div>
-      <div className="md:hidden relative right-10 top-0 z-50 bg-[#3d222258] rounded">
+      <div className="md:hidden relative right-0 top-0 z-50 bg-[#3d222258] rounded">
         <Hamburger toggled={isOpen} toggle={() => setOpen(!isOpen)} />
       </div>
 
