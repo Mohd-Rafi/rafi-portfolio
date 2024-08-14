@@ -36,7 +36,7 @@ const Navbar = () => {
     },
   };
   return (
-    <div className="z-20 w-screen h-20 fixed top-0 backdrop-blur-3xl  flex items-center justify-around max-md:justify-between px-[10px] max-md:px-[5px]">
+    <div className="z-20 w-screen h-20 fixed top-0 backdrop-blur-lg  flex items-center justify-around max-md:justify-between px-[10px] max-md:px-[5px]">
       <Helmet>
         <title>Muhammed Rafi Nellikuzhy Portfolio</title>
         <meta name="description" content="Muhammed Rafi Nellikuzhy Portfolio" />
