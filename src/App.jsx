@@ -8,9 +8,12 @@ import Footer from './Components/Footer/Footer';
 import { Helmet } from 'react-helmet';
 import ReactGA from 'react-ga4';
 import './App.css';
+import { useEffect } from 'react';
 
-function App() {
-  ReactGA.initialize('G-6KFV4WN1JF');
+const App = () => {
+  useEffect(() => {
+    ReactGA.initialize('G-6KFV4WN1JF');
+  }, []);
   return (
     <>
       <Helmet>
@@ -27,6 +30,6 @@ function App() {
       <Footer />
     </>
   );
-}
+};
 
 export default App;
