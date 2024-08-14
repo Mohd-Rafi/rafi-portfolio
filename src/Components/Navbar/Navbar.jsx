@@ -134,7 +134,7 @@ const Navbar = () => {
           <p className="line-clamp-1">Connect With Me</p>
         </AnchorLink>
       </div>
-      <div className="md:hidden relative right-0 top-0 z-50 bg-[#3d222258] rounded">
+      <div className="md:hidden relative right-2 top-0 z-50 bg-[#3d222258] rounded">
         <Hamburger toggled={isOpen} toggle={() => setOpen(!isOpen)} />
       </div>
 
