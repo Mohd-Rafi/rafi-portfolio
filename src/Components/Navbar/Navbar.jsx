@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { Cross as Hamburger } from 'hamburger-react';
 import { motion } from 'framer-motion';
@@ -6,9 +6,6 @@ import './Navbar.css';
 import { Helmet } from 'react-helmet';
 
 const Navbar = () => {
-  const [menu, setMenu] = useState('home');
-  const [isOpen, setOpen] = useState(false);
-
   const navitems = [
     { name: 'Home', href: '#home', setmenu: 'home' },
     { name: 'About Me', href: '#about', setmenu: 'about' },
@@ -16,27 +13,32 @@ const Navbar = () => {
     { name: 'Portfolio', href: '#work', setmenu: 'work' },
     { name: 'Contact', href: '#contact', setmenu: 'contact' },
   ];
-  const variants1 = {
-    hidden: { opacity: 1, scale: 0 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2,
-      },
-    },
-  };
 
-  const variants2 = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-    },
-  };
+  const [menu, setMenu] = useState('home');
+  const [isOpen, setOpen] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY < lastScrollY) {
+        setShowNavbar(true); // Show navbar on scroll up
+      } else {
+        setShowNavbar(false); // Hide navbar on scroll down
+      }
+      setLastScrollY(currentScrollY);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
   return (
-    <div className="z-20 w-screen h-20 fixed top-0 backdrop-blur-lg  flex items-center justify-around max-md:justify-between px-[10px] max-md:px-[5px]">
+    <div
+      className={`z-20 w-screen h-20 fixed top-0 backdrop-blur-lg flex items-center justify-around max-md:justify-between px-[10px] max-md:px-[5px] transition-transform duration-200 ${
+        showNavbar ? 'translate-y-0' : '-translate-y-full'
+      }`}
+    >
       <Helmet>
         <title>Muhammed Rafi Nellikuzhy Portfolio</title>
         <meta name="description" content="Muhammed Rafi Nellikuzhy Portfolio" />
@@ -50,12 +52,7 @@ const Navbar = () => {
         />
       </AnchorLink>
 
-      <ul
-        variant={variants1}
-        initial="visible"
-        animate="hidden"
-        className="nav-menu flex items-center justify-center gap-[100px] list-none max-md:hidden"
-      >
+      <ul className="nav-menu flex items-center justify-center gap-[100px] list-none max-md:hidden">
         {navitems.map((item, i) => (
           <li key={i} className="flex flex-col gap-1">
             <AnchorLink className="anchor-link" offset={50} href={item.href}>
@@ -72,69 +69,13 @@ const Navbar = () => {
             )}
           </li>
         ))}
-        {/* <li className="flex flex-col gap-1">
-          <AnchorLink className="anchor-link" offset={50} href="#about">
-            <p onClick={() => setMenu('about')}>About Me</p>
-          </AnchorLink>
-          {menu == 'about' ? (
-            <img
-              src="/assets/nav_underline.svg"
-              alt=""
-              className="flex m-auto"
-            />
-          ) : (
-            ''
-          )}
-        </li>
-        <li className="flex flex-col gap-1">
-          <AnchorLink className="anchor-link" offset={50} href="#service">
-            <p onClick={() => setMenu('service')}>Services</p>
-          </AnchorLink>
-          {menu == 'service' ? (
-            <img
-              src="/assets/nav_underline.svg"
-              alt=""
-              className="flex m-auto"
-            />
-          ) : (
-            ''
-          )}
-        </li>
-        <li className="flex flex-col gap-1">
-          <AnchorLink className="anchor-link" offset={50} href="#work">
-            <p onClick={() => setMenu('work')}>Portfolio</p>
-          </AnchorLink>
-          {menu == 'work' ? (
-            <img
-              src="/assets/nav_underline.svg"
-              alt=""
-              className="flex m-auto"
-            />
-          ) : (
-            ''
-          )}
-        </li>
-        <li className="flex flex-col gap-1">
-          <AnchorLink className="anchor-link" offset={50} href="#contact">
-            <p onClick={() => setMenu('contact')}>Contact</p>
-          </AnchorLink>
-          {menu == 'contact' ? (
-            <img
-              src="/assets/nav_underline.svg"
-              alt=""
-              className="flex m-auto"
-            />
-          ) : (
-            ''
-          )}
-        </li> */}
       </ul>
       <div className="nav-connect bg-gradient-custom py-[20px] px-[40px] rounded-[50px] text-lg cursor-pointer hover:scale-105 hover:ease-in duration-200 max-xl:hidden">
         <AnchorLink className="anchor-link" offset={50} href="#contact">
           <p className="line-clamp-1">Connect With Me</p>
         </AnchorLink>
       </div>
-      <div className="md:hidden relative right-2 top-0 z-50 bg-[#3d222258] rounded">
+      <div className="md:hidden relative right-3 top-0 z-50 bg-[#3d222258] rounded">
         <Hamburger toggled={isOpen} toggle={() => setOpen(!isOpen)} />
       </div>
 
