@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { Cross as Hamburger } from 'hamburger-react';
-import { motion } from 'framer-motion';
 import './Navbar.css';
 import { Helmet } from 'react-helmet';
 
@@ -40,9 +39,9 @@ const Navbar = () => {
       }`}
     >
       <Helmet>
-        <title>Muhammed Rafi Nellikuzhy Portfolio</title>
-        <meta name="description" content="Muhammed Rafi Nellikuzhy Portfolio" />
-        <meta name="keywords" content="Muhammed Rafi Nellikuzhy Portfolio" />
+        <title>Muhammed Rafi Portfolio</title>
+        <meta name="description" content="Muhammed Rafi Portfolio" />
+        <meta name="keywords" content="Muhammed Rafi Portfolio" />
       </Helmet>
       <AnchorLink className="anchor-link" offset={50} href="#home">
         <img

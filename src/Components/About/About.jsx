@@ -64,9 +64,9 @@ const About = () => {
       className="relative select-none about flex flex-col items-center justify-center gap-[80px] my-[80px] mx-[170px]  max-md:my-18 max-md:mx-8 max-md:items-start"
     >
       <Helmet>
-        <title>Muhammed Rafi Nellikuzhy Portfolio</title>
-        <meta name="description" content="Muhammed Rafi Nellikuzhy Portfolio" />
-        <meta name="keywords" content="Muhammed Rafi Nellikuzhy Portfolio" />
+        <title>Muhammed Rafi Portfolio</title>
+        <meta name="description" content="Muhammed Rafi Portfolio" />
+        <meta name="keywords" content="Muhammed Rafi Portfolio" />
       </Helmet>
       <div className="about-title relative">
         <h2 className="px-[30px] text-5xl font-bold max-md:text-3xl max-md:px-0">

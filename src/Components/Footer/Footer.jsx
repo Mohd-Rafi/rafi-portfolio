@@ -6,9 +6,9 @@ const Footer = () => {
   return (
     <div className="footer my-[50px] mx-[170px] flex flex-col gap-7 max-md:mx-10">
       <Helmet>
-        <title>Muhammed Rafi Nellikuzhy Portfolio</title>
-        <meta name="description" content="Muhammed Rafi Nellikuzhy Portfolio" />
-        <meta name="keywords" content="Muhammed Rafi Nellikuzhy Portfolio" />
+        <title>Muhammed Rafi Portfolio</title>
+        <meta name="description" content="Muhammed Rafi Portfolio" />
+        <meta name="keywords" content="Muhammed Rafi Portfolio" />
       </Helmet>
       <div className="footer-top flex justify-between max-xl:flex-col max-xl:gap-10">
         <div className="footer-top-left">
