@@ -38,7 +38,7 @@ const About = () => {
       transition: {
         duration: 1,
         delayChildren: 0.2,
-        staggerChildren: 0.2,
+        staggerChildren: 0.1,
       },
     },
   };
@@ -88,21 +88,44 @@ const About = () => {
           />
         </div>
         <div className="about-right flex flex-col gap-[80px]">
-          <div className="about-para flex flex-col gap-3 text-xl max-md:text-center">
-            <p>
-              I am Web Developer Fresher who completed 5 months course in MERN
-              Stack Development
-            </p>
-            <p className="mt-3">
-              My passion for web development is not only reflected in my
-              extensive expreience but also in the enthusiasm and dedication
-            </p>
-          </div>
           <motion.div
             variants={variants1}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: false }}
+            className="about-para flex flex-col gap-3 text-xl max-md:text-center"
+          >
+            <p
+              variants={variants1}
+              className="flex flex-wrap justify-start gap-[6px] max-md:justify-center"
+            >
+              I am Web Developer Fresher who completed 5 months course in MERN
+              Stack Development`
+            </p>
+
+            <motion.p
+              variants={variants1}
+              className="mt-3 flex flex-wrap justify-start gap-[6px] max-md:justify-center"
+            >
+              {`My passion for web development is not only reflected in my extensive experience but also in the enthusiasm and dedication`
+                .split(' ')
+                .map((word, i) => (
+                  <motion.span
+                    key={i}
+                    variants={variants2}
+                    className="inline-block"
+                  >
+                    {word}
+                  </motion.span>
+                ))}
+            </motion.p>
+          </motion.div>
+
+          <motion.div
+            variants={variants1}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false }}
             className="about-skills flex flex-col gap-5"
           >
             {items.map((item, i) => (

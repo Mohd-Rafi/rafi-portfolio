@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { Cross as Hamburger } from 'hamburger-react';
 import './Navbar.css';

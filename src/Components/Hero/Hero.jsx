@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import './Hero.css';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { Helmet } from 'react-helmet';
